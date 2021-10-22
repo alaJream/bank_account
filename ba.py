@@ -4,25 +4,33 @@ class BankAccount:
         self.account = account_number
         self.balance = balance
 
-    def deposit(self):
+    def deposit(self, amount):
         # add parameter to take amount and add to balance
-        print("Amount Deposited: $X.XX new balance: $Y.YY")
+        deposited_total = amount + self.balance
+        print(f'Amount Deposited: ${amount} New Balance: ${deposited_total}')
 
-    def withdraw(self):
-        # add parameter to subtract from balance
-        print("Amount withdrawn: $X.XX new balance: $Y.YY")
+    def withdraw(self, amount):
         # if user withdraw account greater than balance account 
-        print("Insufficient funds.")
+        if amount > self.balance:
+            self.balance -= 1
+            return ("Insufficient funds.")
+        # add parameter to subtract from balance
+        total = self.balance - amount
+        print(f'Amount withdrawn: ${amount} new balance: ${total}')
+        
+        
 
     def get_balance(self):
         print(f"Welcome to Gonzales Banking, here is your current balance: {self.balance}.")
 
-    def add_interest(self):
+    def add_interest(self, balance):
         # adds interest to the users balance, annual interest rate is 1%, 0.083%/month
         # interest = balance * 0.00083
-        print("Interest rate")
+        interest = balance * 0.00083
+        interest_total = interest + balance
+        return (interest_total)
 
-    def print_statement(self):
-        print(self.name)
-        print(self.account)
-        print(self.balance)
+    def print_statement(self, name, account, balance):
+        return (account)
+
+
