@@ -31,6 +31,6 @@ class BankAccount:
         return (interest_total)
 
     def print_statement(self, name, account, balance):
-        return (account)
+        return (f'{name} Account Number: {account} Balance: {balance}')
 
 
