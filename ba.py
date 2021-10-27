@@ -42,6 +42,7 @@ class BankAccount:
         print(f"\n\n---------- {self.name}'s Statement ----------")
         print(f'\nAccount type: {self.account_type} \nAccount Numer: ****{str(self.account)[slice(4,8)]}\nBalance: ${"{:.2f}".format(self.balance)}\n')
 
+#stretch challenge
 class Bank:
     def __init__(self, full_name, create_account, deposit, withdraw, statement):
         self.full_name = full_name
@@ -58,19 +59,19 @@ def account_number_generator():
 
 #TEST
 
-# #checking deposit and checking interest
-# jeremys_account = BankAccount('Jeremy Renner', account_number_generator(), 'Checking', 10000)
-# jeremys_account.print_statement()
-# jeremys_account.deposit(1000)
-# jeremys_account.add_interest()
-# jeremys_account.print_statement
+#checking deposit and checking interest
+jeremys_account = BankAccount('Jeremy Renner', account_number_generator(), 'Checking', 10000)
+jeremys_account.print_statement()
+jeremys_account.deposit(1000)
+jeremys_account.add_interest()
+jeremys_account.print_statement
 
-# #savings withdraw/overdraft and savings interest 
-# bruces_account = BankAccount('Bruce Banner', account_number_generator(), 'Savings', 10000)
-# bruces_account.withdraw(11000)
-# bruces_account.print_statement()
-# bruces_account.add_interest()
-# bruces_account.print_statement()
+#savings withdraw/overdraft and savings interest 
+bruces_account = BankAccount('Bruce Banner', account_number_generator(), 'Savings', 10000)
+bruces_account.withdraw(11000)
+bruces_account.print_statement()
+bruces_account.add_interest()
+bruces_account.print_statement()
 
 mitchells_account = BankAccount('Mithcell Hudson', '03141592', 'Checking', 0)
 mitchells_account.print_statement()
@@ -80,4 +81,9 @@ mitchells_account.print_statement()
 mitchells_account.withdraw(150)
 mitchells_account.print_statement()
 
+# stretch 
+bank = [jeremys_account, bruces_account, mitchells_account]
+
+for account in bank:
+    account.add_interest
 
